@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 15%;
+    --primary: 195 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 40% 95%;
+    --secondary-foreground: 150 30% 25%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 15% 50%;
+    --accent: 150 50% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 195 80% 45%;
+    --radius: 0.75rem;
+    
+    /* Custom colors - Fresh & Clean */
+    --fresh-blue: #0EA5E9;
+    --fresh-blue-light: #E0F2FE;
+    --fresh-green: #10B981;
+    --fresh-green-light: #D1FAE5;
+    --soft-gray: #F8FAFC;
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Smooth scroll for Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Custom font classes */
+.font-display {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Fresh gradient backgrounds */
+.bg-fresh-gradient {
+  background: linear-gradient(135deg, #E0F2FE 0%, #D1FAE5 100%);
+}
+
+.bg-fresh-blue {
+  background-color: var(--fresh-blue-light);
+}
+
+.bg-fresh-green {
+  background-color: var(--fresh-green-light);
+}
+
+/* Text colors */
+.text-fresh-blue {
+  color: var(--fresh-blue);
+}
+
+.text-fresh-green {
+  color: var(--fresh-green);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-[#0EA5E9] text-white font-medium rounded-full transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-[#0284C7] shadow-lg shadow-sky-200;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white text-slate-700 font-medium rounded-full border border-slate-200 transition-all duration-300;
+}
+
+.btn-secondary:hover {
+  @apply border-sky-300 text-sky-600 shadow-md;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  @apply px-6 py-3 bg-[#25D366] text-white font-medium rounded-full transition-all duration-300 flex items-center gap-2;
+}
+
+.btn-whatsapp:hover {
+  @apply bg-[#128C7E] shadow-lg shadow-green-200;
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.card-fresh {
+  @apply bg-white rounded-2xl shadow-sm border border-slate-100 transition-all duration-300;
+}
+
+.card-fresh:hover {
+  @apply shadow-lg border-sky-100;
+  transform: translateY(-4px);
+}
+
+/* Navigation styles */
+.nav-fresh {
+  @apply bg-white/90 backdrop-blur-md border-b border-slate-100;
+}
+
+/* Section styles */
+.section-fresh {
+  @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
+}
+
+/* Input styles */
+.input-fresh {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400 transition-all;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Icon circle */
+.icon-circle {
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+}
+
+.icon-circle-blue {
+  @apply icon-circle bg-sky-100 text-sky-600;
+}
+
+.icon-circle-green {
+  @apply icon-circle bg-emerald-100 text-emerald-600;
+}
