@@ -23,7 +23,7 @@ export const PHONE_NUMBERS = {
 // export const API_URL = 'http://localhost:3000';
 
 // En production (à remplacer après déploiement du backend)
-export const API_URL = 'https://votre-backend-deploye.com';
+export const API_URL = 'https://sahel-production.up.railway.app';
 
 // Configuration des produits
 export const PRODUCTS = {
