@@ -11,14 +11,24 @@ import Footer from './sections/Footer';
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'products' | 'events' | 'contact' | 'reviews'>('home');
 
-  useEffect(() => {
-    document.title = 'Yaourt du Sahel - Yaourt Maison & Toukoudi Traditionnel à Zinder';
+  x  useEffect(() => {
+    // Changement de titre dynamique pour le SEO
+    const titles = {
+      home: 'Yaourt du Sahel - Yaourt Maison & Toukoudi à Zinder',
+      products: 'Nos Yaourts & Toukoudi - Yaourt du Sahel',
+      events: 'Commandes Événements (Mariages, Baptêmes) - Yaourt du Sahel',
+      reviews: 'Avis Clients - Ce qu’ils pensent de nos Yaourts',
+      contact: 'Contactez Yaourt du Sahel - Commande et Livraison'
+    };
+
+    document.title = titles[currentPage];
     
+    // Configuration Viewport (déjà bonne)
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (metaViewport) {
       metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
     }
-  }, []);
+  }, [currentPage]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
